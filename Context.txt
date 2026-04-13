@@ -1,0 +1,37 @@
+I am building a full-stack project (UserCrudMssql) and learning Azure step by step.
+
+Project Details:
+
+* Frontend: React
+* Backend: Node.js (Express)
+* Database: SQL Server (local → moving to Azure SQL)
+* Features: CRUD operations using stored procedures
+
+Current Progress:
+
+* Completed local full-stack project (React + Node + MSSQL)
+* Installed SQL Server and SSMS
+* Created database, tables, and stored procedures
+* Backend API working locally (http://localhost:9000/api/users)
+* Frontend working locally (http://localhost:3000)
+
+Azure Progress:
+
+* Using Pay-As-You-Go subscription
+* Completed Day 1:
+
+  * Created Resource Group (usercrud-rg)
+  * Created App Service (usercrud-api-<name>)
+  * Verified App Service URL is working
+
+Current Task:
+
+* Starting Day 2: Deploy Node.js backend to Azure App Service
+
+Help Needed:
+
+* Step-by-step guidance to deploy backend using Azure CLI
+* Debugging support if deployment fails
+* Continue full Azure learning plan (SQL, frontend, CI/CD, etc.)
+
+Please guide me step-by-step like before (simple + practical).
