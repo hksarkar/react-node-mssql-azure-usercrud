@@ -15,6 +15,6 @@ steps:
 
 - task: AzureWebApp@1
   inputs:
-    azureSubscription: 'Azure subscription 1 (6a6a871f-f14e-43d4-9136-5638e7419075)'
+    azureSubscription: '6a6a871f-f14e-43d4-9136-5638e7419075'
     appName: 'usercrud-api-hksarkar'
     package: 'server'
