@@ -1,0 +1,20 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '18.x'
+
+- script: |
+    cd server
+    npm install
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'dea688f4-3c4b-4c19-8d39-a7fe3821a59f'
+    appName: 'usercrud-api-hksarkar'
+    package: 'server'
