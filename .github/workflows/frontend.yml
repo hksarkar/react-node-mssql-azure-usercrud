@@ -1,0 +1,33 @@
+name: Deploy React App to Azure
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "client/**" # Only run when client changes
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install & Build React
+        run: |
+          cd client
+          npm install
+          npm run build
+
+      - name: Deploy to Azure
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: "usercrud-ui-hksarkar" # your frontend app service
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_UI }}
+          package: ./client/build
