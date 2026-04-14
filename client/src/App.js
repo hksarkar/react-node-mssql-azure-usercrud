@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 
 function App() {
@@ -6,14 +6,15 @@ function App() {
   const [users, setUsers] = useState([]);
   const [form, setForm] = useState({ name: "", email: "", age: "" });
 
-  const fetchUsers = async () => {
+  // ✅ Wrap in useCallback so the function reference stays stable
+  const fetchUsers = useCallback(async () => {
     const res = await axios.get(API_URL + "/api/users");
     setUsers(res.data);
-  };
+  }, [API_URL]); // API_URL is the only external dependency
 
   useEffect(() => {
     fetchUsers();
-  }, []);
+  }, [fetchUsers]);
 
   const addUser = async () => {
     if (!form.name || !form.email || !form.age) {
