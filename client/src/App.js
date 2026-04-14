@@ -33,9 +33,7 @@ function App() {
 
   return (
     <div style={{ padding: "20px" }}>
-      <h2>User Management System Form :::::</h2>
-      <h2>User Management System Form :::::</h2>
-
+      <h2>User Management System Form ::</h2>
       <div style={{ marginBottom: "10px" }}>
         <input
           placeholder="Name"
