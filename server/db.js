@@ -10,6 +10,7 @@ const sql = require("mssql");
   },
 };*/
 
+//Testing Deployments
 const config = {
   user: "azureuser",
   password: "Strong@12345",
